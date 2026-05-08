@@ -3,7 +3,7 @@ name: Rodar todos os testes
 on:
   push:
     branches:
-    - master
+     - master
   pull_request:
 
 jobs:
