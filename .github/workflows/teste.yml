@@ -1,6 +1,5 @@
 name: Rodar todos os testes
 
-# on= condição do para rodar o teste
 on:
   push:
     branches:
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-lastest
 
   steps:
-    - name: Check ou repository
+    - name: Check out repository
       uses: actions/checkout@v3
 
     - name: Set up Java
