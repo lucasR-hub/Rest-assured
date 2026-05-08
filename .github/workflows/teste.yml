@@ -1,0 +1,29 @@
+name: Rodar todos os testes
+
+# on= condição do para rodar o teste
+on:
+  push:
+    - master
+  pull_request:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-lastest
+
+  steps:
+    - name: Check ou repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+       distribution: "temurin"
+       java-version: '11'
+
+    - name: set up Maven
+      run: |
+       mvn --version
+
+    - name: Build and run tests
+      run: |
+       mvn -Dtest=TesteBasico test
